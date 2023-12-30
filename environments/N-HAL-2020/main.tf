@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     github = {
-      source  = "integrations/github"
-      version = "~> 5.0"
+      source = "integrations/github"
+      version = "5.42.0"
     }
   }
 }
@@ -10,10 +10,11 @@ terraform {
 provider "github" {
   # Authenticating with the Github provider using Github CLI.
   # See https://registry.terraform.io/providers/integrations/github/latest/docs#github-cli
+  owner = "N-HAL-2020"
 }
 
 module "repositories" {
-  source = "./modules/repository"
+  source = "../../modules/repository"
   for_each = local.repositories
   name = each.key
   description = each.value.description
