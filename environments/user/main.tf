@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "github" {
-  # Authenticating with the Github provider using Github CLI.
+  # Authenticating with the GitHub provider using GitHub CLI.
   # See https://registry.terraform.io/providers/integrations/github/latest/docs#github-cli
 }
 
