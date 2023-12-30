@@ -12,10 +12,11 @@ provider "github" {
   # See https://registry.terraform.io/providers/integrations/github/latest/docs#github-cli
 }
 
-resource "github_repository" "example" {
-  name        = "example-repo"
-  description = "An example GitHub repository"
-  visibility  = "public"
+resource "github_repository" "repositories" {
+  for_each = local.repositories
+  name        = each.key
+  description = each.value.description
+  visibility  = each.value.visibility
 
   ## Features
   has_issues = true
@@ -24,4 +25,13 @@ resource "github_repository" "example" {
   allow_rebase_merge = false
   allow_update_branch = true
   delete_branch_on_merge = true
+}
+
+locals {
+  repositories = {
+    "example-repo": {
+      "description": "An example GitHub repository",
+      "visibility": "public",
+    }
+  }
 }
