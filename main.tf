@@ -12,19 +12,12 @@ provider "github" {
   # See https://registry.terraform.io/providers/integrations/github/latest/docs#github-cli
 }
 
-resource "github_repository" "repositories" {
+module "repositories" {
+  source = "./modules/repository"
   for_each = local.repositories
-  name        = each.key
+  name = each.key
   description = each.value.description
-  visibility  = each.value.visibility
-
-  ## Features
-  has_issues = true
-
-  ## Pull Requests
-  allow_rebase_merge = false
-  allow_update_branch = true
-  delete_branch_on_merge = true
+  visibility = each.value.visibility
 }
 
 locals {
