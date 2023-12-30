@@ -1,3 +1,7 @@
+## Requirements
+
+- [Terraform](https://developer.hashicorp.com/terraform/install) >= 0.13.0
+
 ## Usage
 
 ```bash
