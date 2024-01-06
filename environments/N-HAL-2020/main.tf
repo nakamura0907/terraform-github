@@ -21,11 +21,34 @@ module "repositories" {
   visibility = each.value.visibility
 }
 
+module "teams" {
+  source      = "../../modules/team"
+  for_each    = local.teams
+  name        = each.key
+  description = each.value["description"]
+  privacy     = each.value["privacy"]
+  members     = each.value["members"]
+  permissions = each.value["permissions"]
+}
+
 locals {
   repositories = {
     "example-repo": {
       "description": "An example GitHub repository",
       "visibility": "public",
+    }
+  }
+  teams = {
+    "example-project-admin": {
+      "description": "Administrators of the example project",
+      "privacy": "closed",
+      "members": {
+        "nakamura0907": "maintainer",
+        "mitsuYashi": "maintainer",
+      },
+      "permissions": {
+        "example-repo": "admin",
+      }
     }
   }
 }
