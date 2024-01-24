@@ -12,17 +12,17 @@ provider "github" {
   # See https://registry.terraform.io/providers/integrations/github/latest/docs#github-cli
 }
 
-module "repositories" {
+module "examples" {
   source = "../../modules/repository"
-  for_each = local.repositories
-  name = each.key
+  for_each = local.examples
+  name = "${each.key}-example"
   description = each.value.description
   visibility = each.value.visibility
 }
 
 locals {
-  repositories = {
-    "keycloak-example": {
+  examples = {
+    "keycloak": {
       "description": "Example repository for Keycloak",
       "visibility": "public",
     }
