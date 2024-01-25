@@ -27,6 +27,7 @@ module "boilerplates" {
   name = each.key
   description = each.value.description
   visibility = each.value.visibility
+  is_template = true
 }
 
 module "teams" {

@@ -11,6 +11,7 @@ resource "github_repository" "this" {
   name        = var.name
   description = var.description
   visibility  = var.visibility
+  is_template = var.is_template
 
   ## Features
   has_issues = true
