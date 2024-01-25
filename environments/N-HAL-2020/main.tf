@@ -48,6 +48,10 @@ locals {
     }
   }
   boilerplates = {
+    "echo-boilerplate": {
+      "description": "A boilerplate for golang echo",
+      "visibility": "public",
+    },
     "nextjs-boilerplate": {
       "description": "A boilerplate for Next.js",
       "visibility": "public",
