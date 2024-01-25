@@ -21,6 +21,14 @@ module "repositories" {
   visibility = each.value.visibility
 }
 
+module "boilerplates" {
+  source = "../../modules/repository"
+  for_each = local.boilerplates
+  name = each.key
+  description = each.value.description
+  visibility = each.value.visibility
+}
+
 module "teams" {
   source      = "../../modules/team"
   for_each    = local.teams
@@ -35,6 +43,12 @@ locals {
   repositories = {
     "example-repo": {
       "description": "An example GitHub repository",
+      "visibility": "public",
+    }
+  }
+  boilerplates = {
+    "nextjs-boilerplate": {
+      "description": "A boilerplate for Next.js",
       "visibility": "public",
     }
   }
