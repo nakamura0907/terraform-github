@@ -55,7 +55,11 @@ locals {
     "nextjs-boilerplate": {
       "description": "A boilerplate for Next.js",
       "visibility": "public",
-    }
+    },
+    "rust-cli-boilerplate": {
+      "description": "A boilerplate for Rust CLI",
+      "visibility": "public",
+    },
   }
   teams = {
     "example-project-admin": {
