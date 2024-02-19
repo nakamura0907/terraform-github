@@ -25,6 +25,10 @@ locals {
     "keycloak": {
       "description": "Example repository for Keycloak",
       "visibility": "public",
-    }
+    },
+    "echo-prometheus-grafana": {
+      "description": "Example repository for Echo, Prometheus, and Grafana",
+      "visibility": "private",
+    },
   }
 }
