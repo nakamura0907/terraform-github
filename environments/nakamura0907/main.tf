@@ -28,7 +28,7 @@ locals {
     },
     "echo-prometheus-grafana": {
       "description": "Example repository for Echo, Prometheus, and Grafana",
-      "visibility": "private",
+      "visibility": "public",
     },
   }
 }
