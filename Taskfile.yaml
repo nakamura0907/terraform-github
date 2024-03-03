@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  terraform:nakamura0907:
+    desc: "Run terraform in nakamura0907"
+    dir: environments/nakamura0907
+    cmds:
+      - terraform {{.CLI_ARGS}}
+    silent: true
+
+  terraform:N-HAL-2020:
+    desc: "Run terraform in N-HAL-2020"
+    dir: environments/N-HAL-2020
+    cmds:
+      - terraform {{.CLI_ARGS}}
+    silent: true
