@@ -18,6 +18,7 @@ module "examples" {
   name = "${each.key}-example"
   description = each.value.description
   visibility = each.value.visibility
+  archived = each.value.archived
 }
 
 locals {
@@ -25,10 +26,12 @@ locals {
     "keycloak": {
       "description": "Example repository for Keycloak",
       "visibility": "public",
+      "archived": null,
     },
     "echo-prometheus-grafana": {
       "description": "Example repository for Echo, Prometheus, and Grafana",
       "visibility": "public",
+      "archived": true,
     },
   }
 }

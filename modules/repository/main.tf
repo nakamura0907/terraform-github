@@ -20,4 +20,7 @@ resource "github_repository" "this" {
   allow_rebase_merge = false
   allow_update_branch = true
   delete_branch_on_merge = true
+
+  ## Danger Zone
+  archived = var.archived
 }
